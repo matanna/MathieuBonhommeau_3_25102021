@@ -1,0 +1,21 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "ohmyfood is a mobile first application where users can book in a restaurant their menu which they was just composed on the application",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d .public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matanna/ohmyfood.git"
+  },
+  "author": "Mathieu Bonhommeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matanna/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/matanna/ohmyfood#readme",
+  "browserslist": "last 4 versions"
+}
