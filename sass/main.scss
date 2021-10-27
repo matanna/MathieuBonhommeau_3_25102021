@@ -1,3 +1,12 @@
-/* This file is the principal file
- * All scss files are include in this file
- */
+@import './utils/fonts';
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './base/base';
+@import './base/typography';
+
+@import './layouts/container';
+@import './layouts/header';
+@import './layouts/card';
+
+@import './components/localization';

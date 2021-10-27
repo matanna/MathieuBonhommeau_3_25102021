@@ -1,0 +1,15 @@
+@mixin shadow {
+    box-shadow: 2px 0 10px darken($color-tertiary, 20%);
+}
+
+//Center all elements in the box
+@mixin center-in-box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bg-light($color: $color-tertiary, $pourcent: 20%) {
+    background-color: lighten($color, $pourcent);
+}

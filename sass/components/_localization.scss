@@ -1,0 +1,25 @@
+.localization-container {
+    @include bg-light($pourcent: 15%);
+    @include center-in-box;
+    position:relative;
+    z-index: -1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.localization {
+
+    &__select {
+        outline: 0;
+        border: none;
+        background: transparent;
+        appearance: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    &__icon {
+        margin-right: 1rem;
+        font-size: 1.1rem;
+    }
+}
