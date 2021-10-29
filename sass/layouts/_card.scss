@@ -1,3 +1,14 @@
+.card {
+    @include center-in-box;
+    @include shadow;
+    flex-direction: row;
+    border-radius: $card-corner;
+
+    &:not(:last-of-type) {
+        margin-bottom: $card-bottom-spacing;
+    }
+}
+
 .card-heading {
 
     &__img {

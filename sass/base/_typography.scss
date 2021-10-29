@@ -1,9 +1,15 @@
+h1 {
+    font-family: $title-font;
+    font-weight: normal;
+    margin: 0;
+}
+
 a {
     text-decoration: none;
-    color: black;
+    color: $text-color;
 
     &:hover, &:active {
-        color: $color-primary;
+        color: color($primary);
     }
 }
 

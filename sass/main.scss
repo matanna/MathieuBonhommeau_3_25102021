@@ -1,5 +1,6 @@
 @import './utils/fonts';
 @import './utils/variables';
+@import 'utils/functions';
 @import './utils/mixins';
 
 @import './base/base';
@@ -8,5 +9,9 @@
 @import './layouts/container';
 @import './layouts/header';
 @import './layouts/card';
+@import './layouts/section';
 
+@import './components/buttons';
 @import './components/localization';
+@import './components/front-banner';
+@import './components/step';

@@ -1,0 +1,13 @@
+.btn {
+    color: color($tertiary, xlight);
+    font-weight: bold;
+    background: linear-gradient(175deg, color($primary, light), color($primary));
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    margin: 1rem auto;
+    @include shadow;
+
+    &:hover {
+        color: color($tertiary, xlight);
+    }
+}

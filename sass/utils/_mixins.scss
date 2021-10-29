@@ -1,15 +1,36 @@
-@mixin shadow {
-    box-shadow: 2px 0 10px darken($color-tertiary, 20%);
+
+@mixin shadow($size: 5px, $bg-color: $tertiary, $color: $tertiary) {
+    @if (lightness($bg-color) > lightness($color)) {
+        box-shadow: 0px $size ($size+3) color($color, light);
+    } @else {
+        box-shadow: 0px $size ($size+3) color($color, sdark);
+    }
+    
 }
 
 //Center all elements in the box
 @mixin center-in-box {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-@mixin bg-light($color: $color-tertiary, $pourcent: 20%) {
-    background-color: lighten($color, $pourcent);
+//Generate pseudo element ::before for number of step
+@mixin step-number($number) {
+    @for $i from 1 through $number {
+        &.step-#{$i}::before {
+            content: "#{$i}";
+            position: absolute;
+            left: 0;
+            background: color($primary);
+            width: 25px;
+            height: 25px;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 25px;
+            color: color($tertiary, light);
+        }
+    }
 }

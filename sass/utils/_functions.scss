@@ -1,0 +1,9 @@
+//Function for calculate all colors lights
+@function color($color, $light: normal) {
+    $map: (normal: $color,
+            light: lighten($color, 15%),
+            xlight: lighten($color, 20%),
+            dark: darken($color, 20%),
+            sdark: darken($color, 10%));
+    @return map-get($map, $light);
+}

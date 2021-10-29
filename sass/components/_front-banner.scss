@@ -1,0 +1,12 @@
+#front-banner {
+    @include center-in-box;
+    background: color($tertiary, xlight);
+    text-align: center;
+
+    h1 {
+        font-family: $text-font;
+        font-weight: bold;
+        font-size: $title-size;
+        padding: 0 15%;
+    }
+}

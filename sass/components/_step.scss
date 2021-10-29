@@ -1,0 +1,21 @@
+.step {
+    height: $box-height;
+    background-color: color($tertiary, xlight);
+    font-weight: bold;
+    @include shadow($size: 5px, $bg-color: white);
+    @include step-number(3);
+
+    &:hover {
+        &.step--enable {
+            color: color($primary);
+            background-color: color($secondary, xlight);
+        }
+    }
+
+    &__number {
+        color: $text-color;
+    }
+    &__text {
+        color: $text-color;
+    }
+}
