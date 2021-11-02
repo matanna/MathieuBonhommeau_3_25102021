@@ -1,0 +1,33 @@
+.like {
+    position: relative;
+    width: $icon-size;
+    height: $icon-size;
+
+    &__btn {
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        
+        i {
+            font-size: $icon-size;
+        }
+
+        &--disable {
+            z-index: 10;
+        }
+
+        &--enable {
+            opacity: 0;
+            @include like-enable;
+
+            &:hover+ .like__btn--disable {
+                color: color($primary);
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

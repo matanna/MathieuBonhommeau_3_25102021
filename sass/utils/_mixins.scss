@@ -23,14 +23,20 @@
         &.step-#{$i}::before {
             content: "#{$i}";
             position: absolute;
-            left: 0;
+            left: -(math.div($icon-size, 2));
             background: color($primary);
-            width: 25px;
-            height: 25px;
+            width: $icon-size;
+            height: $icon-size;
             border-radius: 100%;
             text-align: center;
-            line-height: 25px;
+            line-height: $icon-size;
             color: color($tertiary, light);
         }
     }
+}
+
+//Button like
+@mixin like-enable {
+    z-index: 20;
+    color: color($primary);
 }

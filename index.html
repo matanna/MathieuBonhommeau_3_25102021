@@ -28,17 +28,17 @@
 <body>
   
     <!-- Header ========================================================================= -->
-    <div id="header-container" class="container">
+    <div id="header-container">
         <header class="header">
             <img class="header__logo" src="./public/images/logo/ohmyfood.png" alt="Logo de ohmyfood">
         </header>
     </div>
 
     <!-- Main ==========================================================================  -->
-    <div id="main-container" class="container">
+    <div id="main-container">
         <main>
             <!-- Localization bloc - Form Select ===========================================  -->
-            <div class="localization-container" class="container">
+            <div class="localization-container">
                 <form action="#" method="post" class="localization">
                     <i class="localization__icon fas fa-map-marker-alt"></i>
                     <select name="localization" id="localization" class="localization__select">
@@ -60,15 +60,15 @@
 
                 <div class="steps">
                     <div class="step step-1 step--enable card">
-                        <div class="step__icon step__icon--enable"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="step__icon"><i class="fas fa-mobile-alt"></i></div>
                         <div class="step__text">Choisissez un restaurant</div>
                     </div>
                     <div class="step step-2 step--enable card">
-                        <div class="step__icon step__icon--enable"><i class="fas fa-ellipsis-v"></i><i class="fas fa-bars"></i></div>
+                        <div class="step__icon"><i class="fas fa-ellipsis-v"></i><i class="fas fa-bars"></i></div>
                         <div class="step__text">Composez votre menu</div>
                     </div>
                     <div class="step step-3 step--enable card">
-                        <div class="step__icon step__icon--enable"><i class="fas fa-store"></i></div>
+                        <div class="step__icon"><i class="fas fa-store"></i></div>
                         <div class="step__text">Dégustez au restaurant</div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
             <section id="restaurants">
                 <h2>Restaurants</h2>
 
-                <div class="restaurants-container" class="container">
+                <div class="restaurants-container">
 
                     <div class="restaurant-card card">
                         <a href="la-palette-du-gout.html" title="Lien vers le menu du restaurant La palette du goût">
@@ -88,11 +88,14 @@
                                 <div class="card-heading__flag">Nouveau</div>
                             </div>
                             <div class="card-content">
-                                <div>
-                                    <h3 class="card-content__title">La palette du goût</h3>
-                                    <p class="card-content__text">Ménilmontant</p>
+                                <div class="card-content__details">
+                                    <h3>La palette du goût</h3>
+                                    <p>Ménilmontant</p>
                                 </div>
-                                <button class="card-content__icon"><i class="far fa-heart"></i></button>
+                                <div class="card-content__icon like">
+                                    <button class="like__btn like__btn--enable "><i class="fas fa-heart"></i></button>
+                                    <button class="like__btn like__btn--disable"><i class="far fa-heart"></i></button>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -104,11 +107,14 @@
                                 <div class="card-heading__flag">Nouveau</div>
                             </div>
                             <div class="card-content">
-                                <div>
-                                    <h3 class="card-content__title">La note enchantée</h3>
-                                    <p class="card-content__text">Charonne</p>
+                                <div class="card-content__details">
+                                    <h3>La note enchantée</h3>
+                                    <p>Charonne</p>
                                 </div>
-                                <button class="card-content__like"><i class="far fa-heart"></i></button>
+                                <div class="card-content__icon card-content__icon--like like">
+                                    <button class="like__btn like__btn--enable "><i class="fas fa-heart"></i></button>
+                                    <button class="like__btn like__btn--disable"><i class="far fa-heart"></i></button>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -120,11 +126,14 @@
                             </div>
 
                             <div class="card-content">
-                                <div>
-                                    <h3 class="card-content__title">A la française</h3>
-                                    <p class="card-content__text">Cité Rouge</p>
+                                <div class="card-content__details">
+                                    <h3>A la française</h3>
+                                    <p>Cité Rouge</p>
                                 </div>
-                                <button class="card-content__icon"><i class="far fa-heart"></i></button>
+                                <div class="card-content__icon like">
+                                    <button class="like__btn like__btn--enable "><i class="fas fa-heart"></i></button>
+                                    <button class="like__btn like__btn--disable"><i class="far fa-heart"></i></button>
+                                </div> 
                             </div>
                         </a>
                     </div>
@@ -133,14 +142,16 @@
                         <a href="le-delice-des-sens.html" title="Lien vers le menu du restaurant Le délice des sens">
                             <div class="card-heading">
                                 <img class="card-heading__img" src="./public/images/restaurants/le_delice_des_sens.jpg" alt="Pḧoto du restaurant La palette du goût">
-                                <div class="card-heading__flag">Nouveau</div>
                             </div>
                             <div class="card-content">
-                                <div>
-                                    <h3 class="card-content__title">Le délice des sens</h3>
-                                    <p class="card-content__text">Folie-Méricourt</p>
+                                <div class="card-content__details">
+                                    <h3>Le délice des sens</h3>
+                                    <p>Folie-Méricourt</p>
                                 </div>
-                                <button class="card-content__icon"><i class="far fa-heart"></i></button>
+                                <div class="card-content__icon like">
+                                    <button class="like__btn like__btn--enable "><i class="fas fa-heart"></i></button>
+                                    <button class="like__btn like__btn--disable"><i class="far fa-heart"></i></button> 
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -151,7 +162,7 @@
     </div>
 
     <!-- Footer ==================================================================== -->
-    <div div="footer-container" class="container">
+    <div id="footer-container">
         <footer class="footer">
             <h4>ohmyfood</h4>
             <div class="footer-links">

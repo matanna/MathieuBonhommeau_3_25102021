@@ -1,6 +1,9 @@
+@use "sass:list";
+@use "sass:math";
+
 @import './utils/fonts';
 @import './utils/variables';
-@import 'utils/functions';
+@import './utils/functions';
 @import './utils/mixins';
 
 @import './base/base';
@@ -8,10 +11,17 @@
 
 @import './layouts/container';
 @import './layouts/header';
-@import './layouts/card';
 @import './layouts/section';
+@import './layouts/footer';
 
 @import './components/buttons';
-@import './components/localization';
-@import './components/front-banner';
-@import './components/step';
+@import './components/card';
+@import './components/like';
+
+@import './pages/front-page/localization';
+@import './pages/front-page/front-banner';
+@import './pages/front-page/working';
+@import './pages/front-page/restaurants';
+
+@import './pages/menu-page/menu-banner';
+@import './pages/menu-page/menu';

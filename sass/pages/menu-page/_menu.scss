@@ -1,0 +1,39 @@
+#menu {
+    position: relative;
+    top: -$menu-corner;
+    border-top-left-radius: $menu-corner;
+    border-top-right-radius: $menu-corner;
+    background-color: color($tertiary, xlight);
+    padding-top: 1.5rem;
+}
+
+.menu-heading {
+
+    @include center-in-box;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 1.5rem;
+    }
+}
+
+.menu-section {
+    padding: 1rem 0;
+
+    &__title {
+        font-weight: normal;
+        font-size: 1rem;
+        position: relative;
+        margin-bottom: 1.5rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 15%;
+            border-bottom: 2px solid color($tertiary); 
+        }
+    }
+}

@@ -1,4 +1,4 @@
-h1 {
+h1, h4 {
     font-family: $title-font;
     font-weight: normal;
     margin: 0;
@@ -11,5 +11,10 @@ a {
     &:hover, &:active {
         color: color($primary);
     }
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
