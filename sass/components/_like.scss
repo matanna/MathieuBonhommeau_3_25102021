@@ -3,6 +3,18 @@
     width: $icon-size;
     height: $icon-size;
 
+    &--active .like__btn {
+
+        &--disable {
+            display: none;
+        }
+
+        &--enable {
+            opacity: 1;
+            @include like-enable;
+        }
+    }
+
     &__btn {
         position: absolute;
         border: none;

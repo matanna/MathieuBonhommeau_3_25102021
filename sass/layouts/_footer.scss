@@ -1,7 +1,6 @@
 #footer-container {
     @include center-in-box;
     align-items: flex-start;
-    width: 100%;
     background-color: $footer-bg;
     color: $footer-text;
     padding: 1rem $side-padding;

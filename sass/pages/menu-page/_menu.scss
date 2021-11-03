@@ -4,7 +4,8 @@
     border-top-left-radius: $menu-corner;
     border-top-right-radius: $menu-corner;
     background-color: color($tertiary, xlight);
-    padding-top: 1.5rem;
+    padding: 1.5rem $side-padding;
+    margin-bottom: -$menu-corner;
 }
 
 .menu-heading {
@@ -21,6 +22,10 @@
 .menu-section {
     padding: 1rem 0;
 
+    &:last-of-type {
+        padding-bottom: 2rem;
+    }
+
     &__title {
         font-weight: normal;
         font-size: 1rem;
@@ -36,4 +41,13 @@
             border-bottom: 2px solid color($tertiary); 
         }
     }
+
+    .card:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.order-action {
+    @include center-in-box;
+    padding-bottom: 1rem;
 }

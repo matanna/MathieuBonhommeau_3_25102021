@@ -5,6 +5,8 @@
     padding: 1rem 1.5rem;
     border-radius: 3rem;
     margin: 1rem auto;
+    border: none;
+    min-width: 170px;
     @include shadow;
 
     &:hover {

@@ -52,6 +52,7 @@
 
     &__details {
         flex-grow: 1;
+        width: 100%;
 
         & > * {
             margin: 0;
@@ -59,20 +60,16 @@
         }
     }
 
+    &__text {
+        display: inline-block;
+        white-space: nowrap;
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     &__icon {
         font-size: 1.5rem;
-        
-        &--like .like__btn {
-            
-            &--disable {
-                display: none;
-            }
-
-            &--enable {
-                opacity: 1;
-                @include like-enable;
-            }
-        }
     }
 
     &__price {
