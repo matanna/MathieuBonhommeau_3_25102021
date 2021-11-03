@@ -14,10 +14,14 @@ $footer-bg: #353535;
 $footer-text: #ffffff;
 $card-bg: #ffffff;
 
+//logo size
+$logo-size: 150px;
 
-//Box height
+//Boxes size
 $box-height: 65px;
 $menu-banner-height: 240px;
+$max-width-main: 1200px;
+$max-card-height: 350px;
 
 //Padding section, footer
 $side-padding : 5%;
@@ -32,3 +36,8 @@ $card-bottom-spacing: 1.5rem;
 //icon
 $icon-size: 24px;
 
+//steps
+$step-number: 3;
+
+//Coeff size for desktop
+$coeff: 1.5;

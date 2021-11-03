@@ -17,6 +17,13 @@
     align-items: center;
 }
 
+//flex and between
+@mixin flex-between {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 //Generate pseudo element ::before for number of step
 @mixin step-number($number) {
     @for $i from 1 through $number {

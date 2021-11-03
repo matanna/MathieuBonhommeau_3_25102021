@@ -1,3 +1,22 @@
-#restaurants {
+.restaurants-container {
     background-color: color($tertiary, xlight);
+}
+
+#restaurants {
+    margin: 0 auto;
+}
+
+.restaurants-content {
+    @include tablet-desktop {
+        @include flex-between;
+    }
+    
+    .restaurant-card {
+
+        @include tablet-desktop {
+            width: calc(100%/2 - $card-bottom-spacing);
+            margin-bottom: $card-bottom-spacing * 2;
+        }
+        
+    }
 }

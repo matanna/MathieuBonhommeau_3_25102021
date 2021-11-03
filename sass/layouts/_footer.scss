@@ -1,7 +1,11 @@
 #footer-container {
-    @include center-in-box;
-    align-items: flex-start;
     background-color: $footer-bg;
+}
+
+footer {
+    @include center-in-box;
+    margin: 0 auto;
+    align-items: flex-start;
     color: $footer-text;
     padding: 1rem $side-padding;
 }

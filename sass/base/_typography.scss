@@ -2,6 +2,16 @@ h1, h4 {
     font-family: $title-font;
     font-weight: normal;
     margin: 0;
+
+    @include desktop-only {
+        font-size: $title-size * $coeff;
+    }
+}
+
+h2 {
+    @include tablet-desktop {
+        margin-bottom: 2rem;
+    }
 }
 
 a {

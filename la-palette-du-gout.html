@@ -40,135 +40,136 @@
         <main>
             <!-- Section menu-banner ======================================================== -->
             <div id="menu-banner">
-                <img src="./public/images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant La palette du gout" class="menu-banner_img">
+                <img src="./public/images/restaurants/la_palette_du_gout_big.jpg" alt="Photo du restaurant La palette du gout" class="menu-banner_img">
             </div>
 
             <!-- Section menu =============================================================== -->
-            <div id="menu">
+            <div class="menu-container">
+                <div id="menu" class="container">
 
                 <!-- Bloc title ============================================================= -->
-                <div class="menu-heading">
-                    <h1 class="menu-heading__title">La palette du goût</h1>
-                    <div class="menu-heading__icon like" aria-label="Cliquer sur le coeur pour liker ce restaurant">
-                        <div class="like__btn like__btn--enable "><i class="fas fa-heart" aria-hidden="false"></i></div>
-                        <div class="like__btn like__btn--disable"><i class="far fa-heart" aria-hidden="false"></i></div> 
+                    <div class="menu-heading">
+                        <h1 class="menu-heading__title">La palette du goût</h1>
+                        <div class="menu-heading__icon like" aria-label="Cliquer sur le coeur pour liker ce restaurant">
+                            <div class="like__btn like__btn--enable "><i class="fas fa-heart" aria-hidden="false"></i></div>
+                            <div class="like__btn like__btn--disable"><i class="far fa-heart" aria-hidden="false"></i></div> 
+                        </div>
+                    </div>
+                    
+                    <div class="menu-content">
+                        <!-- Section starter - Entrées ========================================== -->
+                        <section id="starter" class="menu-section">
+                            <h2 class="menu-section__title">ENTRÉES</h2>
+
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Fricassé d'escargot</h3>
+                                    <p>
+                                        <span class="card-content__text">Au piment d'espelette</span>
+                                        <span class="card-content__price">25€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Foie gras de canard mi-cuit</h3>
+                                    <p>
+                                        <span class="card-content__text">Et ses copeaux de truffe noire</span>
+                                        <span class="card-content__price">35€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Oeuf au plat</h3>
+                                    <p>
+                                        <span class="card-content__text">Assaisonné à la truffe sur lit de légumes verts</span>
+                                        <span class="card-content__price">20€</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Section dishes - Plats ============================================ -->
+                        <section id="dishes" class="menu-section">
+                            <h2 class="menu-section__title">PLATS</h2>
+
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Filet de boeuf aux herbes</h3>
+                                    <p>
+                                        <span class="card-content__text">Accompagné de sa ribambelle de légumes vapeurs</span>
+                                        <span class="card-content__price">40€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Parmentier de queue de boeuf</h3>
+                                    <p>
+                                        <span class="card-content__text">A la truffe noire sur sa purée de panais</span>
+                                        <span class="card-content__price">35€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Filet de Turbot</h3>
+                                    <p>
+                                        <span class="card-content__text">Aux agrumes</span>
+                                        <span class="card-content__price">44€</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Section desserts - Desserts ======================================= -->
+                        <section id="desserts" class="menu-section">
+                            <h2 class="menu-section__title">DESSERTS</h2>
+
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Paris-Brest</h3>
+                                    <p>
+                                        <span class="card-content__text">Revisité</span>
+                                        <span class="card-content__price">18€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Macaron au chocolat d'exception</h3>
+                                    <p>
+                                        <span class="card-content__text">Et glace à la vanille de Madagascar</span>
+                                        <span class="card-content__price">22€</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card-content">
+                                <div class="card-content__details">
+                                    <h3>Mousse au chocolat</h3>
+                                    <p>
+                                        <span class="card-content__text">Au piment d'espelette et à la truffe noire</span>
+                                        <span class="card-content__price">23€</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Bloc order button ============================================== -->
+                        <div class="order-action">
+                            <button class="order-action__btn btn">Commander</button>
+                        </div>
+
                     </div>
                 </div>
-                
-                <div class="menu-container">
-                    <!-- Section starter - Entrées ========================================== -->
-                    <section id="starter" class="menu-section">
-                        <h2 class="menu-section__title">ENTRÉES</h2>
-
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Fricassé d'escargot</h3>
-                                <p>
-                                    <span class="card-content__text">Au piment d'espelette</span>
-                                    <span class="card-content__price">25€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Foie gras de canard mi-cuit</h3>
-                                <p>
-                                    <span class="card-content__text">Et ses copeaux de truffe noire</span>
-                                    <span class="card-content__price">35€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Oeuf au plat</h3>
-                                <p>
-                                    <span class="card-content__text">Assaisonné à la truffe sur lit de légumes verts</span>
-                                    <span class="card-content__price">20€</span>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Section dishes - Plats ============================================ -->
-                    <section id="dishes" class="menu-section">
-                        <h2 class="menu-section__title">PLATS</h2>
-
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Filet de boeuf aux herbes</h3>
-                                <p>
-                                    <span class="card-content__text">Accompagné de sa ribambelle de légumes vapeurs</span>
-                                    <span class="card-content__price">40€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Parmentier de queue de boeuf</h3>
-                                <p>
-                                    <span class="card-content__text">A la truffe noire sur sa purée de panais</span>
-                                    <span class="card-content__price">35€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Filet de Turbot</h3>
-                                <p>
-                                    <span class="card-content__text">Aux agrumes</span>
-                                    <span class="card-content__price">44€</span>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Section desserts - Desserts ======================================= -->
-                    <section id="desserts" class="menu-section">
-                        <h2 class="menu-section__title">DESSERTS</h2>
-
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Paris-Brest</h3>
-                                <p>
-                                    <span class="card-content__text">Revisité</span>
-                                    <span class="card-content__price">18€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Macaron au chocolat d'exception</h3>
-                                <p>
-                                    <span class="card-content__text">Et glace à la vanille de Madagascar</span>
-                                    <span class="card-content__price">22€</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card card-content">
-                            <div class="card-content__details">
-                                <h3>Mousse au chocolat</h3>
-                                <p>
-                                    <span class="card-content__text">Au piment d'espelette et à la truffe noire</span>
-                                    <span class="card-content__price">23€</span>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Bloc order button ============================================== -->
-                    <div class="order-action">
-                        <button class="order-action__btn btn">Commander</button>
-                    </div>
-
-                </div>
-
-            </div>
+            </div> 
         </main>
     </div>
 
     <!-- Footer ==================================================================== -->
     <div id="footer-container">
-        <footer class="footer">
+        <footer class="footer container">
             <h4>ohmyfood</h4>
             <div class="footer-links">
                 <ul>

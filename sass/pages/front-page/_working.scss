@@ -1,15 +1,35 @@
+#working {
+
+    @include tablet-desktop {
+        margin: 0 auto;
+    }
+    @include tablet-only {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
 .steps {
     margin-left: math.div($icon-size, 2);
+
+    @include desktop-only {
+        @include flex-between;
+    }
 }
 
 .step {
+    @include shadow($size: 5px, $bg-color: white);
+    @include step-number($step-number);
+
     position: relative;
     height: $box-height;
     background-color: color($tertiary, xlight);
     font-weight: bold;
     justify-content: flex-start;
-    @include shadow($size: 5px, $bg-color: white);
-    @include step-number(3);
+
+    @include desktop-only {
+        width: calc(math.div(100%, $step-number) - 3%);
+    }
 
     &__icon {
         margin-left: $icon-size + math.div($icon-size, 2);

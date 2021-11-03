@@ -1,21 +1,42 @@
-#menu {
+.menu-container {
     position: relative;
     top: -$menu-corner;
     border-top-left-radius: $menu-corner;
     border-top-right-radius: $menu-corner;
     background-color: color($tertiary, xlight);
-    padding: 1.5rem $side-padding;
     margin-bottom: -$menu-corner;
+
+    @include desktop-only {
+        width: 60%;
+        top: -($menu-corner * $coeff);
+        margin: 0 auto;
+        border-radius: $menu-corner * $coeff;
+    }
+}
+
+#menu {
+    padding: 1.5rem $side-padding;
+    margin: 0 auto;
+    
+    @include tablet-only {
+        width: 60%;
+    }
+
+
 }
 
 .menu-heading {
-
     @include center-in-box;
+
     flex-direction: row;
     justify-content: space-between;
 
     &__title {
         font-size: 1.5rem;
+
+        @include desktop-only {
+            font-size: 1.5rem * $coeff;
+        }
     }
 }
 
@@ -32,13 +53,23 @@
         position: relative;
         margin-bottom: 1.5rem;
 
+        @include desktop-only {
+            font-size: 1rem * $coeff;
+            margin-bottom: 1.5rem * $coeff;
+        }
+
         &::after {
             content: '';
             position: absolute;
             left: 0;
             bottom: -0.5rem;
             width: 15%;
-            border-bottom: 2px solid color($tertiary); 
+            border-bottom: 2px solid color($tertiary);
+
+            @include desktop-only {
+                width: 5%;
+                border-bottom: (2px * $coeff) solid color($tertiary);
+            }
         }
     }
 

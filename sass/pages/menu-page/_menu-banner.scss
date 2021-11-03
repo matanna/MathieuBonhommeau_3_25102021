@@ -5,5 +5,9 @@
         object-fit: cover;
         width: 100%;
         height: $menu-banner-height;
+
+        @include desktop-only {
+            height: 50vh;
+        }
     } 
 }

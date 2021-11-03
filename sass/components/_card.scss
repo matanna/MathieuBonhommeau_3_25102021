@@ -1,6 +1,7 @@
 .card {
     @include center-in-box;
     @include shadow;
+    
     flex-direction: row;
     border-radius: $card-corner;
     background-color: $card-bg;
@@ -15,12 +16,18 @@
 
     a {
         width: 100%;
+        height: inherit;
     }
 }
 
 .card-heading {
     position: relative;
     height: $box-height * 2.5;
+    
+    @include desktop-only {
+        height: map-get(restaurant-card-height(), height-img);
+        max-height: map-get(restaurant-card-height(), max-height-img);
+    }
 
     &__img {
         width: 100%;
@@ -40,14 +47,24 @@
         font-weight: bold;
         padding: 0.3rem 0.6rem;
         border-radius: 2px;
+
+        @include desktop-only {
+            font-size: 0.8rem * 1.5;
+        }
     }
 }
 
 .card-content {
     @include center-in-box;
+    
     flex-direction: row;
     justify-content: space-between;
     height: $box-height;
+
+    @include desktop-only {
+        height: $box-height * 1.5;
+    }
+
     padding: 0 1rem;
 
     &__details {

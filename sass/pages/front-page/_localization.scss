@@ -1,10 +1,16 @@
 .localization-container {
-    background: color($tertiary, light);
     @include center-in-box;
+
+    background: color($tertiary, light);
     position:relative;
     z-index: -1;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @include desktop-only {
+        padding-top: 1rem * $coeff;
+        padding-bottom: 1rem * $coeff;
+    }
 }
 
 .localization {

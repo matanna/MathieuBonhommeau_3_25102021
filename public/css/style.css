@@ -5,11 +5,27 @@ body {
   font-size: 14px;
   font-family: "Roboto", "sans-serif";
 }
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 16.8px;
+  }
+}
 
 h1, h4 {
   font-family: "Shrikhand", "cursive";
   font-weight: normal;
   margin: 0;
+}
+@media screen and (min-width: 992px) {
+  h1, h4 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
 
 a {
@@ -25,10 +41,19 @@ ul {
   padding-left: 0;
 }
 
+.container {
+  max-width: 1200px;
+}
+
 #header-container {
+  box-shadow: 0px 3px 6px #71d7be;
   width: 100%;
   height: 65px;
-  box-shadow: 0px 3px 6px #71d7be;
+}
+@media screen and (min-width: 992px) {
+  #header-container {
+    height: 97.5px;
+  }
 }
 
 .header {
@@ -43,23 +68,43 @@ ul {
   display: block;
   width: 150px;
 }
+@media screen and (min-width: 992px) {
+  .header__logo {
+    width: 225px;
+  }
+}
 .header__back {
   position: absolute;
   left: 10px;
+}
+@media screen and (min-width: 992px) {
+  .header__back {
+    left: 30px;
+    font-size: 21px;
+  }
 }
 
 section {
   padding: 2rem 5%;
 }
+@media screen and (min-width: 992px) {
+  section {
+    padding: 3rem 5%;
+  }
+}
 
 #footer-container {
+  background-color: #353535;
+}
+
+footer {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   align-items: flex-start;
-  background-color: #353535;
   color: #ffffff;
   padding: 1rem 5%;
 }
@@ -112,11 +157,18 @@ section {
 }
 .card a {
   width: 100%;
+  height: inherit;
 }
 
 .card-heading {
   position: relative;
   height: 162.5px;
+}
+@media screen and (min-width: 992px) {
+  .card-heading {
+    height: calc(25vw - 97.5px);
+    max-height: 252.5px;
+  }
 }
 .card-heading__img {
   width: 100%;
@@ -136,6 +188,11 @@ section {
   padding: 0.3rem 0.6rem;
   border-radius: 2px;
 }
+@media screen and (min-width: 992px) {
+  .card-heading__flag {
+    font-size: 1.2rem;
+  }
+}
 
 .card-content {
   height: 100%;
@@ -147,6 +204,11 @@ section {
   justify-content: space-between;
   height: 65px;
   padding: 0 1rem;
+}
+@media screen and (min-width: 992px) {
+  .card-content {
+    height: 97.5px;
+  }
 }
 .card-content__details {
   flex-grow: 1;
@@ -209,16 +271,22 @@ section {
 }
 
 .localization-container {
-  background: #d5f3eb;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #d5f3eb;
   position: relative;
   z-index: -1;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .localization-container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 .localization__select {
@@ -233,13 +301,21 @@ section {
   font-size: 1.1rem;
 }
 
-#front-banner {
+.front-banner-container {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #e8f9f5;
+}
+
+#front-banner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 #front-banner h1 {
@@ -248,18 +324,44 @@ section {
   font-size: 20px;
   padding: 0 15%;
 }
+@media screen and (min-width: 992px) {
+  #front-banner h1 {
+    flex-direction: row;
+    font-size: 30px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #working {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #working {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
 
 .steps {
   margin-left: 12px;
 }
+@media screen and (min-width: 992px) {
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
 .step {
+  box-shadow: 0px 5px 8px #d5f3eb;
   position: relative;
   height: 65px;
   background-color: #e8f9f5;
   font-weight: bold;
   justify-content: flex-start;
-  box-shadow: 0px 5px 8px #d5f3eb;
 }
 .step.step-1::before {
   content: "1";
@@ -297,6 +399,11 @@ section {
   line-height: 24px;
   color: #d5f3eb;
 }
+@media screen and (min-width: 992px) {
+  .step {
+    width: 30.3333333333%;
+  }
+}
 .step__icon {
   margin-left: 36px;
 }
@@ -309,8 +416,26 @@ section {
   background-color: #ffdff6;
 }
 
-#restaurants {
+.restaurants-container {
   background-color: #e8f9f5;
+}
+
+#restaurants {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurants-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurants-content .restaurant-card {
+    width: calc(50% - 1.5rem);
+    margin-bottom: 3rem;
+  }
 }
 
 #menu-banner {
@@ -321,15 +446,37 @@ section {
   width: 100%;
   height: 240px;
 }
+@media screen and (min-width: 992px) {
+  #menu-banner img {
+    height: 50vh;
+  }
+}
 
-#menu {
+.menu-container {
   position: relative;
   top: -35px;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   background-color: #e8f9f5;
-  padding: 1.5rem 5%;
   margin-bottom: -35px;
+}
+@media screen and (min-width: 992px) {
+  .menu-container {
+    width: 60%;
+    top: -52.5px;
+    margin: 0 auto;
+    border-radius: 52.5px;
+  }
+}
+
+#menu {
+  padding: 1.5rem 5%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #menu {
+    width: 60%;
+  }
 }
 
 .menu-heading {
@@ -344,6 +491,11 @@ section {
 .menu-heading__title {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 992px) {
+  .menu-heading__title {
+    font-size: 2.25rem;
+  }
+}
 
 .menu-section {
   padding: 1rem 0;
@@ -357,6 +509,12 @@ section {
   position: relative;
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 992px) {
+  .menu-section__title {
+    font-size: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+}
 .menu-section__title::after {
   content: "";
   position: absolute;
@@ -364,6 +522,12 @@ section {
   bottom: -0.5rem;
   width: 15%;
   border-bottom: 2px solid #99E2D0;
+}
+@media screen and (min-width: 992px) {
+  .menu-section__title::after {
+    width: 5%;
+    border-bottom: 3px solid #99E2D0;
+  }
 }
 .menu-section .card:last-child {
   margin-bottom: 0;
