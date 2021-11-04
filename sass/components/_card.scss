@@ -2,6 +2,7 @@
     @include center-in-box;
     @include shadow;
     
+    position: relative;
     flex-direction: row;
     border-radius: $card-corner;
     background-color: $card-bg;
@@ -17,6 +18,17 @@
     a {
         width: 100%;
         height: inherit;
+    }
+
+    &__icon {
+        font-size: $icon-size;
+        position: absolute;
+        bottom: calc(math.div($box-height, 2) - math.div($icon-size, 2));
+        right: 1rem;
+
+        @include desktop-only {
+            bottom: calc(math.div($box-height * $coeff, 2) - math.div($icon-size, 2));
+        }
     }
 }
 
@@ -83,14 +95,19 @@
         width: 80%;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
 
-    &__icon {
-        font-size: 1.5rem;
+        @include desktop-only {
+            height: $text-size * $coeff;
+            vertical-align: text-bottom;
+        }  
     }
 
     &__price {
         font-weight: bold;
         float: right;
+
+        @include desktop-only {
+            font-size: $text-size * $coeff;
+        }
     }
 }

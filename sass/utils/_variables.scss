@@ -1,3 +1,5 @@
+/* General variables ========================================================== */
+
 //Fonts
 $title-font: 'Shrikhand', 'cursive';
 $text-font: 'Roboto', 'sans-serif';
@@ -14,30 +16,39 @@ $footer-bg: #353535;
 $footer-text: #ffffff;
 $card-bg: #ffffff;
 
-//logo size
+//Size
 $logo-size: 150px;
-
-//Boxes size
 $box-height: 65px;
 $menu-banner-height: 240px;
 $max-width-main: 1200px;
 $max-card-height: 350px;
-
-//Padding section, footer
-$side-padding : 5%;
-
-//Box radius
-$card-corner: 15px;
-$menu-corner: 35px;
-
-//Spacing between elements
-$card-bottom-spacing: 1.5rem;
-
-//icon
 $icon-size: 24px;
-
-//steps
-$step-number: 3;
 
 //Coeff size for desktop
 $coeff: 1.5;
+
+//Padding, Spacing
+$side-padding : 5%;
+$card-bottom-spacing: 1.5rem;
+
+//Radius
+$card-corner: 15px;
+$menu-corner: 35px;
+
+/* Specific variables ========================================================== */
+
+/* Variables for mixin "display-menu-animation" ============ */
+//Number of steps working
+$step-number: 3;
+
+/* Variables for mixin "step-number" ============ */
+//Number of section menu - Entry, dishes and desser
+$number-section-menu: 3;
+
+//Number of dishes by section in the menu
+$number-dishes: 4;
+
+//Delay for display menu elements
+$card-menu-delay: 0.15s;
+$section-menu-delay: 0.6s;
+

@@ -1,5 +1,4 @@
 .like {
-    position: relative;
     width: $icon-size;
     height: $icon-size;
 
@@ -10,8 +9,17 @@
         }
 
         &--enable {
-            opacity: 1;
             @include like-enable;
+            transform: scale(1);
+        }
+    }
+
+    &:hover, &:active {
+        .like__btn--enable {
+            transform: scale(1);
+        }
+        .like__btn--disable {
+            color: color($primary);
         }
     }
 
@@ -20,6 +28,8 @@
         border: none;
         background-color: transparent;
         padding: 0;
+        transform-origin: 50% 80%;
+        transition: transform 0.7s;
         
         i {
             font-size: $icon-size;
@@ -30,16 +40,8 @@
         }
 
         &--enable {
-            opacity: 0;
             @include like-enable;
-
-            &:hover+ .like__btn--disable {
-                color: color($primary);
-            }
-        }
-
-        &:hover {
-            opacity: 1;
+            transform: scale(0);
         }
     }
 }

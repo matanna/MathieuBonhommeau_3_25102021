@@ -33,17 +33,28 @@
 
     &__icon {
         margin-left: $icon-size + math.div($icon-size, 2);
+        z-index: 20;
     }
 
     &__text {
         color: $text-color;
         margin-left: $icon-size;
+        z-index: 20;
+    }
+
+    &::after {
+        @include pseudo-element;
+        background-color: color($secondary, xlight);
+        transition: opacity 0.2s;
     }
 
     &:hover {
         &.step--enable {
             color: color($primary);
-            background-color: color($secondary, xlight);
+            
+            &::after {
+                opacity: 1;
+            }
         }
     }
 }

@@ -1,11 +1,12 @@
+/* General mixins ================================================================= */
 
+//Generate shadow
 @mixin shadow($size: 5px, $bg-color: $tertiary, $color: $tertiary) {
     @if (lightness($bg-color) > lightness($color)) {
         box-shadow: 0px $size ($size+3) color($color, light);
     } @else {
         box-shadow: 0px $size ($size+3) color($color, sdark);
-    }
-    
+    } 
 }
 
 //Center all elements in the box
@@ -17,12 +18,33 @@
     align-items: center;
 }
 
-//flex and between
+//Flex and between
 @mixin flex-between {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+//Button like
+@mixin like-enable {
+    z-index: 20;
+    color: color($primary);
+}
+
+//Basic ::after or ::before for animations
+@mixin pseudo-element {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    z-index: 10;
+    opacity: 0;
+}
+
+/* Specific mixins ================================================================== */
 
 //Generate pseudo element ::before for number of step
 @mixin step-number($number) {
@@ -38,12 +60,22 @@
             text-align: center;
             line-height: $icon-size;
             color: color($tertiary, light);
+            z-index: 20;
         }
     }
 }
 
-//Button like
-@mixin like-enable {
-    z-index: 20;
-    color: color($primary);
+//Generate selector for manage delay and display elements on menu pages
+@mixin display-menu-animation {
+    @for $i from 0 through $number-section-menu {
+        &--#{$i + 1} {
+            animation: display-menu 1.1s $section-menu-delay * $i ease-in-out both;
+
+            @for $j from 1 through $number-dishes {
+                .menu-section__content--#{$j} {
+                    animation: display-menu 0.5s (($card-menu-delay * $j) + ($section-menu-delay * $i)) ease-in-out both;
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,300&family=Shrikhand&display=swap");
+/* General variables ========================================================== */
+/* Specific variables ========================================================== */
+/* Variables for mixin "display-menu-animation" ============ */
+/* Variables for mixin "step-number" ============ */
+/* General mixins ================================================================= */
+/* Specific mixins ================================================================== */
+@keyframes display-menu {
+  0% {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  30%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 body {
   box-sizing: border-box;
   font-size: 14px;
@@ -124,6 +142,8 @@ footer {
 }
 
 .btn {
+  box-shadow: 0px 5px 8px #71d7be;
+  position: relative;
   color: #e8f9f5;
   font-weight: bold;
   background: linear-gradient(175deg, #bc95e9, #9356DC);
@@ -132,10 +152,29 @@ footer {
   margin: 1rem auto;
   border: none;
   min-width: 170px;
-  box-shadow: 0px 5px 8px #71d7be;
+  opacity: 1;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: inherit;
+  z-index: 10;
+  opacity: 0;
+  box-shadow: 0px 6px 9px #38c4a1;
+  transition: opacity 0.2s;
 }
 .btn:hover {
   color: #e8f9f5;
+  opacity: 0.85;
+  transform: translate(1.5px, -3px);
+}
+.btn:hover::after {
+  opacity: 1;
 }
 
 .card {
@@ -145,6 +184,7 @@ footer {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 5px 8px #71d7be;
+  position: relative;
   flex-direction: row;
   border-radius: 15px;
   background-color: #ffffff;
@@ -158,6 +198,17 @@ footer {
 .card a {
   width: 100%;
   height: inherit;
+}
+.card__icon {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20.5px;
+  right: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .card__icon {
+    bottom: 36.75px;
+  }
 }
 
 .card-heading {
@@ -225,16 +276,23 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card-content__icon {
-  font-size: 1.5rem;
+@media screen and (min-width: 992px) {
+  .card-content__text {
+    height: 21px;
+    vertical-align: text-bottom;
+  }
 }
 .card-content__price {
   font-weight: bold;
   float: right;
 }
+@media screen and (min-width: 992px) {
+  .card-content__price {
+    font-size: 21px;
+  }
+}
 
 .like {
-  position: relative;
   width: 24px;
   height: 24px;
 }
@@ -242,8 +300,14 @@ footer {
   display: none;
 }
 .like--active .like__btn--enable {
-  opacity: 1;
   z-index: 20;
+  color: #9356DC;
+  transform: scale(1);
+}
+.like:hover .like__btn--enable, .like:active .like__btn--enable {
+  transform: scale(1);
+}
+.like:hover .like__btn--disable, .like:active .like__btn--disable {
   color: #9356DC;
 }
 .like__btn {
@@ -251,6 +315,8 @@ footer {
   border: none;
   background-color: transparent;
   padding: 0;
+  transform-origin: 50% 80%;
+  transition: transform 0.7s;
 }
 .like__btn i {
   font-size: 24px;
@@ -259,15 +325,9 @@ footer {
   z-index: 10;
 }
 .like__btn--enable {
-  opacity: 0;
   z-index: 20;
   color: #9356DC;
-}
-.like__btn--enable:hover + .like__btn--disable {
-  color: #9356DC;
-}
-.like__btn:hover {
-  opacity: 1;
+  transform: scale(0);
 }
 
 .localization-container {
@@ -374,6 +434,7 @@ footer {
   text-align: center;
   line-height: 24px;
   color: #d5f3eb;
+  z-index: 20;
 }
 .step.step-2::before {
   content: "2";
@@ -386,6 +447,7 @@ footer {
   text-align: center;
   line-height: 24px;
   color: #d5f3eb;
+  z-index: 20;
 }
 .step.step-3::before {
   content: "3";
@@ -398,6 +460,7 @@ footer {
   text-align: center;
   line-height: 24px;
   color: #d5f3eb;
+  z-index: 20;
 }
 @media screen and (min-width: 992px) {
   .step {
@@ -406,14 +469,31 @@ footer {
 }
 .step__icon {
   margin-left: 36px;
+  z-index: 20;
 }
 .step__text {
   color: #000000;
   margin-left: 24px;
+  z-index: 20;
+}
+.step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: inherit;
+  z-index: 10;
+  opacity: 0;
+  background-color: #ffdff6;
+  transition: opacity 0.2s;
 }
 .step:hover.step--enable {
   color: #9356DC;
-  background-color: #ffdff6;
+}
+.step:hover.step--enable::after {
+  opacity: 1;
 }
 
 .restaurants-container {
@@ -448,7 +528,7 @@ footer {
 }
 @media screen and (min-width: 992px) {
   #menu-banner img {
-    height: 50vh;
+    height: 35vh;
   }
 }
 
@@ -460,11 +540,23 @@ footer {
   background-color: #e8f9f5;
   margin-bottom: -35px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
+  .menu-container {
+    box-shadow: 0px 5px 8px #71d7be;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
   .menu-container {
     width: 60%;
+    border-radius: 35px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu-container {
+    width: 50%;
+    max-width: 1200px;
     top: -52.5px;
-    margin: 0 auto;
     border-radius: 52.5px;
   }
 }
@@ -472,11 +564,6 @@ footer {
 #menu {
   padding: 1.5rem 5%;
   margin: 0 auto;
-}
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  #menu {
-    width: 60%;
-  }
 }
 
 .menu-heading {
@@ -498,7 +585,68 @@ footer {
 }
 
 .menu-section {
+  opacity: 0;
   padding: 1rem 0;
+}
+.menu-section--1 {
+  animation: display-menu 1.1s 0s ease-in-out both;
+}
+.menu-section--1 .menu-section__content--1 {
+  animation: display-menu 0.5s 0.15s ease-in-out both;
+}
+.menu-section--1 .menu-section__content--2 {
+  animation: display-menu 0.5s 0.3s ease-in-out both;
+}
+.menu-section--1 .menu-section__content--3 {
+  animation: display-menu 0.5s 0.45s ease-in-out both;
+}
+.menu-section--1 .menu-section__content--4 {
+  animation: display-menu 0.5s 0.6s ease-in-out both;
+}
+.menu-section--2 {
+  animation: display-menu 1.1s 0.6s ease-in-out both;
+}
+.menu-section--2 .menu-section__content--1 {
+  animation: display-menu 0.5s 0.75s ease-in-out both;
+}
+.menu-section--2 .menu-section__content--2 {
+  animation: display-menu 0.5s 0.9s ease-in-out both;
+}
+.menu-section--2 .menu-section__content--3 {
+  animation: display-menu 0.5s 1.05s ease-in-out both;
+}
+.menu-section--2 .menu-section__content--4 {
+  animation: display-menu 0.5s 1.2s ease-in-out both;
+}
+.menu-section--3 {
+  animation: display-menu 1.1s 1.2s ease-in-out both;
+}
+.menu-section--3 .menu-section__content--1 {
+  animation: display-menu 0.5s 1.35s ease-in-out both;
+}
+.menu-section--3 .menu-section__content--2 {
+  animation: display-menu 0.5s 1.5s ease-in-out both;
+}
+.menu-section--3 .menu-section__content--3 {
+  animation: display-menu 0.5s 1.65s ease-in-out both;
+}
+.menu-section--3 .menu-section__content--4 {
+  animation: display-menu 0.5s 1.8s ease-in-out both;
+}
+.menu-section--4 {
+  animation: display-menu 1.1s 1.8s ease-in-out both;
+}
+.menu-section--4 .menu-section__content--1 {
+  animation: display-menu 0.5s 1.95s ease-in-out both;
+}
+.menu-section--4 .menu-section__content--2 {
+  animation: display-menu 0.5s 2.1s ease-in-out both;
+}
+.menu-section--4 .menu-section__content--3 {
+  animation: display-menu 0.5s 2.25s ease-in-out both;
+}
+.menu-section--4 .menu-section__content--4 {
+  animation: display-menu 0.5s 2.4s ease-in-out both;
 }
 .menu-section:last-of-type {
   padding-bottom: 2rem;
@@ -528,6 +676,9 @@ footer {
     width: 5%;
     border-bottom: 3px solid #99E2D0;
   }
+}
+.menu-section__content {
+  opacity: 0;
 }
 .menu-section .card:last-child {
   margin-bottom: 0;

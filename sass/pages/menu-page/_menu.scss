@@ -6,10 +6,20 @@
     background-color: color($tertiary, xlight);
     margin-bottom: -$menu-corner;
 
-    @include desktop-only {
-        width: 60%;
-        top: -($menu-corner * $coeff);
+    @include tablet-desktop {
+        @include shadow;
         margin: 0 auto;
+    }
+
+    @include tablet-only {
+        width: 60%;
+        border-radius: $menu-corner;
+    }
+
+    @include desktop-only {
+        width: 50%;
+        max-width: $max-width-main;
+        top: -($menu-corner * $coeff);
         border-radius: $menu-corner * $coeff;
     }
 }
@@ -17,12 +27,6 @@
 #menu {
     padding: 1.5rem $side-padding;
     margin: 0 auto;
-    
-    @include tablet-only {
-        width: 60%;
-    }
-
-
 }
 
 .menu-heading {
@@ -41,6 +45,9 @@
 }
 
 .menu-section {
+    @include display-menu-animation;
+
+    opacity: 0;
     padding: 1rem 0;
 
     &:last-of-type {
@@ -48,6 +55,7 @@
     }
 
     &__title {
+        
         font-weight: normal;
         font-size: 1rem;
         position: relative;
@@ -71,6 +79,10 @@
                 border-bottom: (2px * $coeff) solid color($tertiary);
             }
         }
+    }
+
+    &__content {
+        opacity: 0;
     }
 
     .card:last-child {

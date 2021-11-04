@@ -1,0 +1,15 @@
+@keyframes display-menu {
+    0% {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+    
+    30%,
+    100% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
