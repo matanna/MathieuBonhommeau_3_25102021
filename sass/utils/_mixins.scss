@@ -28,7 +28,42 @@
 //Button like
 @mixin like-enable {
     z-index: 20;
-    color: color($primary);
+    background: -webkit-linear-gradient(bottom, color($secondary), color($primary));
+    background-clip: text;
+    -webkit-background-clip:text;
+    color: transparent;
+}
+
+//Style for cards container - card of restaurants, items of menu, step of working, ...
+@mixin card-style {
+    @include center-in-box;
+    @include shadow;
+    
+    position: relative;
+    flex-direction: row;
+    border-radius: $card-corner;
+    background-color: $card-bg;
+
+    &:not(:last-of-type) {
+        margin-bottom: $card-bottom-spacing;
+    }
+
+    &:last-of-type {
+        margin-bottom: $card-bottom-spacing * 1.2;
+    }
+
+    a {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+//add ... on text in box too small
+@mixin dots {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 //Basic ::after or ::before for animations

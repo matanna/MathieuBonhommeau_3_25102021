@@ -47,6 +47,7 @@
 .menu-section {
     @include display-menu-animation;
 
+    position: relative;
     opacity: 0;
     padding: 1rem 0;
 
@@ -55,7 +56,6 @@
     }
 
     &__title {
-        
         font-weight: normal;
         font-size: 1rem;
         position: relative;
@@ -66,6 +66,7 @@
             margin-bottom: 1.5rem * $coeff;
         }
 
+        //Pseudo element for add a little line under title section menu
         &::after {
             content: '';
             position: absolute;
@@ -82,11 +83,117 @@
     }
 
     &__content {
+        @include card-style;
+        
+        height: $box-height;
+        overflow: hidden;
         opacity: 0;
+        flex-direction: row;
+        padding: 0.7rem 1rem 0.7rem 1rem;
+        box-sizing: border-box;
+
+        @include desktop-only {
+            padding-top: 0.8rem * $coeff;
+            padding-bottom: 0.8rem * $coeff;
+        }
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        //Pseudo element for check icon which is hide befor a user action (click on menu item)
+        &::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            z-index: 20;
+            font-size: $icon-size;
+            color: white;
+            right: calc(math.div($box-height,2) - math.div($icon-size, 2));
+            transform: translateX($box-height + $icon-size) rotate(-360deg);
+            transition: transform 0.5s ease-out;
+
+            @include desktop-only {
+                font-size: $icon-size * $coeff;
+                right: calc(math.div($box-height * $coeff, 2) - math.div($icon-size * $coeff, 2));
+            }
+        }
+
+        //Pseudo element for background of the check icon (::before)
+        &::after {
+            content: '';
+            z-index: 10;
+            position: absolute;
+            right: 0;
+            width: $box-height;
+            height: $box-height;
+            background-color: color($tertiary);
+            transform: translateX($box-height);
+            transition: transform 0.5s;
+
+            @include desktop-only {
+                height: $box-height * $coeff;
+                width: $box-height * $coeff;
+                transform: translateX($box-height * $coeff);
+            }
+        }
+
+        &:hover {
+            &::before {
+                transform: translateX(0);
+            }
+
+            &::after {
+                transform: translateX(0);
+            }
+
+            .menu-section__price {
+                width: $box-height*2;
+                transform: translateX(-$box-height);
+                transition: transform 0.5s, width 0.5s;
+
+                @include desktop-only {
+                    width: $box-height;
+                    transform: translateX(-$box-height * $coeff);
+                    transition: transform 0.5s;
+                }
+            }
+        }
     }
 
-    .card:last-child {
-        margin-bottom: 0;
+    &__details {
+        @include center-in-box;
+        overflow: hidden;
+        flex-grow: 1;
+        flex-shrink: 2;
+        justify-content: space-between;
+        align-items: flex-start;
+        transition: width 0.5s;
+    }
+
+    &__subtitle {
+        @include dots;
+        margin: 0;
+    }
+
+    &__text {
+        @include dots;
+        margin: 0;
+    }
+
+    &__price {
+        width: $box-height;
+        text-align: right;
+        align-self: flex-end;
+        font-weight: bold;
+        margin: 0;
+        transform: translateX(0);
+        transition: transform 0.5s, width 0.5s;
+
+        @include desktop-only {
+            font-size: $text-size * $coeff;
+        }
     }
 }
 
@@ -94,3 +201,4 @@
     @include center-in-box;
     padding-bottom: 1rem;
 }
+

@@ -20,6 +20,7 @@
 .step {
     @include shadow($size: 5px, $bg-color: white);
     @include step-number($step-number);
+    @include card-style;
 
     position: relative;
     height: $box-height;
