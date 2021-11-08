@@ -1,0 +1,101 @@
+.loader-container {
+    position: fixed;
+    @include center-in-box;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    gap: 10px;
+    transform: translateY(-100vh);
+    z-index: 100;
+    background-color: white;
+    animation: hide-loader 0.5s $full-duration-loader backwards;
+}
+
+@keyframes hide-loader {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+.loader {
+    display: flex;
+}
+
+.logo-loader {
+    width: 50%;
+    margin-bottom: 10vh;
+
+    @include tablet-only {
+        width: 30%;
+    }
+
+    @include desktop-only {
+        width: 15%;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover; 
+    }
+}
+
+.ball {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 35% 40%, color($primary, xlight), color($primary), color($primary, xdark));
+    border-radius: 50%;
+    margin: 1px;
+
+    &--left {
+        transform-origin: 75px -300px;
+        transform: rotate(0);
+        animation: balancing-left $duration-cycle 5;
+    }
+
+    &--right {
+        transform-origin: -75px -300px;
+        transform: rotate(0);
+        animation: balancing-right $duration-cycle 5;
+    }
+
+    &--middle {
+        @for $i from 0 through 2 {
+            &#{$i + 1} {
+                transform: translateX(0px);
+                animation: vibrations $duration-cycle 33.33ms*$i 5;
+            }
+        }
+    }
+}
+
+.ball-shadow {
+    background: radial-gradient(closest-side, color($tertiary), white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 1px;
+
+    &--left {
+        transform: rotateX(77deg) translateX(-50px) scale(1.3);
+        animation: balancing-shadow-left $duration-cycle 5;
+    }
+
+    &--right {
+        transform: rotateX(77deg) translateX(50px) scale(1);
+        animation: balancing-shadow-right $duration-cycle 5;
+    }
+
+    &--middle {
+        @for $i from 0 through 2 {
+            &#{$i + 1} {
+                transform: translateX(0px);
+                animation: shadow-vibrations $duration-cycle 33.33ms*$i 5;
+            }
+        }
+    }
+
+}

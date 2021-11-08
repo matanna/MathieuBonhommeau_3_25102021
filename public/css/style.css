@@ -18,6 +18,79 @@
     transform: translateY(0);
   }
 }
+@keyframes balancing-left {
+  0%, 100% {
+    transform: rotate(8deg);
+    animation-timing-function: cubic-bezier(0.72, 0, 0.92, 0.73);
+  }
+  22.7%, 30%, 77.3% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.21, 0.51, 0.52, 1.03);
+  }
+  27% {
+    transform: rotate(0.2deg);
+  }
+}
+@keyframes balancing-right {
+  0%, 27.2%, 72.7%, 80%, 100% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.21, 0.51, 0.52, 1.03);
+  }
+  50% {
+    transform: rotate(-8deg);
+    animation-timing-function: cubic-bezier(0.72, 0, 0.92, 0.73);
+  }
+  77% {
+    transform: rotate(-0.2deg);
+  }
+}
+@keyframes vibrations {
+  0%, 22.7%, 50%, 72.7%, 100% {
+    transform: translateX(0px);
+  }
+  27.2% {
+    transform: translateX(3px);
+  }
+  77.3% {
+    transform: translateX(-3px);
+  }
+}
+@keyframes balancing-shadow-left {
+  0%, 100% {
+    transform: rotateX(77deg) translateX(-50px) scale(1.3);
+    animation-timing-function: cubic-bezier(0.72, 0, 0.92, 0.73);
+  }
+  22.7%, 30%, 77.3% {
+    transform: rotateX(77deg) translateX(0px) scale(1);
+  }
+  27% {
+    transform: rotateX(77deg) translateX(3px) scale(1);
+  }
+}
+@keyframes balancing-shadow-right {
+  0%, 27.2%, 72.7%, 80%, 100% {
+    transform: rotateX(77deg) translateX(0px) scale(1);
+    animation-timing-function: cubic-bezier(0.21, 0.51, 0.52, 1.03);
+  }
+  50% {
+    transform: rotateX(77deg) translateX(50px) scale(1.3);
+    animation-timing-function: cubic-bezier(0.72, 0, 0.92, 0.73);
+  }
+  77% {
+    transform: rotateX(77deg) translateX(-3px) scale(1);
+  }
+}
+@keyframes shadow-vibrations {
+  0%, 22.7%, 50%, 72.7%, 100% {
+    transform: rotateX(77deg) translateX(0px);
+  }
+  27.2% {
+    transform: rotateX(77deg) translateX(3px);
+  }
+  77.3% {
+    transform: rotateX(77deg) translateX(-3px);
+  }
+}
 body {
   box-sizing: border-box;
   font-size: 14px;
@@ -220,6 +293,113 @@ footer {
   -webkit-background-clip: text;
   color: transparent;
   transform: scale(0);
+}
+
+.loader-container {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  gap: 10px;
+  transform: translateY(-100vh);
+  z-index: 100;
+  background-color: white;
+  animation: hide-loader 0.5s 3s backwards;
+}
+
+@keyframes hide-loader {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+.loader {
+  display: flex;
+}
+
+.logo-loader {
+  width: 50%;
+  margin-bottom: 10vh;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .logo-loader {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .logo-loader {
+    width: 15%;
+  }
+}
+.logo-loader img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.ball {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at 35% 40%, #c9abee, #9356DC, #301255);
+  border-radius: 50%;
+  margin: 1px;
+}
+.ball--left {
+  transform-origin: 75px -300px;
+  transform: rotate(0);
+  animation: balancing-left 1.4s 5;
+}
+.ball--right {
+  transform-origin: -75px -300px;
+  transform: rotate(0);
+  animation: balancing-right 1.4s 5;
+}
+.ball--middle1 {
+  transform: translateX(0px);
+  animation: vibrations 1.4s 0ms 5;
+}
+.ball--middle2 {
+  transform: translateX(0px);
+  animation: vibrations 1.4s 33.33ms 5;
+}
+.ball--middle3 {
+  transform: translateX(0px);
+  animation: vibrations 1.4s 66.66ms 5;
+}
+
+.ball-shadow {
+  background: radial-gradient(closest-side, #99E2D0, white);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 1px;
+}
+.ball-shadow--left {
+  transform: rotateX(77deg) translateX(-50px) scale(1.3);
+  animation: balancing-shadow-left 1.4s 5;
+}
+.ball-shadow--right {
+  transform: rotateX(77deg) translateX(50px) scale(1);
+  animation: balancing-shadow-right 1.4s 5;
+}
+.ball-shadow--middle1 {
+  transform: translateX(0px);
+  animation: shadow-vibrations 1.4s 0ms 5;
+}
+.ball-shadow--middle2 {
+  transform: translateX(0px);
+  animation: shadow-vibrations 1.4s 33.33ms 5;
+}
+.ball-shadow--middle3 {
+  transform: translateX(0px);
+  animation: shadow-vibrations 1.4s 66.66ms 5;
 }
 
 .localization-container {
@@ -751,6 +931,7 @@ footer {
   .menu-section__content {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
+    height: 97.5px;
   }
 }
 .menu-section__content:last-child {

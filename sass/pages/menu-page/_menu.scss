@@ -95,6 +95,7 @@
         @include desktop-only {
             padding-top: 0.8rem * $coeff;
             padding-bottom: 0.8rem * $coeff;
+            height: $box-height * $coeff;
         }
         
         &:last-child {

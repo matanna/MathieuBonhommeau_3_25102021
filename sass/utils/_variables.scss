@@ -52,3 +52,9 @@ $number-dishes: 4;
 $card-menu-delay: 0.15s;
 $section-menu-delay: 0.6s;
 
+//Variables for animations
+$duration-cycle: 1.4s;
+$full-duration-loader: 3s;
+
+$ball-down: cubic-bezier(.72, 0, .92, .73);
+$ball-climb: cubic-bezier(.21, .51, .52, 1.03);
