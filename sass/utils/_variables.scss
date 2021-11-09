@@ -1,4 +1,4 @@
-/* General variables ========================================================== */
+// General variables ==========================================================
 
 //Fonts
 $title-font: 'Shrikhand', 'cursive';
@@ -35,13 +35,13 @@ $card-bottom-spacing: 1.5rem;
 $card-corner: 15px;
 $menu-corner: 35px;
 
-/* Specific variables ========================================================== */
+// Specific variables ==========================================================
 
-/* Variables for mixin "display-menu-animation" ============ */
+// Variables for mixin "display-menu-animation" ============
 //Number of steps working
 $step-number: 3;
 
-/* Variables for mixin "step-number" ============ */
+// Variables for mixin "step-number" ============
 //Number of section menu - Entry, dishes and desser
 $number-section-menu: 3;
 
@@ -55,6 +55,5 @@ $section-menu-delay: 0.6s;
 //Variables for animations
 $duration-cycle: 1.4s;
 $full-duration-loader: 3s;
-
 $ball-down: cubic-bezier(.72, 0, .92, .73);
 $ball-climb: cubic-bezier(.21, .51, .52, 1.03);

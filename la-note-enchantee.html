@@ -17,7 +17,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="./public/css/normalize.css">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/style.min.css">
 
     <!--Import Fontawesome by CDN-->
     <script src="https://kit.fontawesome.com/6f3cd41abe.js" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
     <!-- Header ============================================================================ -->
     <div id="header-container">
         <header class="header">
-            <a href="index.html" class="header__back"><i class="fas fa-arrow-left"></i></a>
+            <a href="index.html" class="header__back" title="Retourner à la page d'accueil"><i class="fas fa-arrow-left"></i></a>
             <img class="header__logo" src="./public/images/logo/ohmyfood.png" alt="Logo de ohmyfood">
         </header>
     </div>
@@ -39,9 +39,9 @@
     <div id="main-container">
         <main>
             <!-- Section menu-banner ======================================================== -->
-            <section id="menu-banner">
+            <div id="menu-banner">
                 <img src="./public/images/restaurants/la_note_enchantee_big.jpg" alt="Photo du restaurant La note enchantée" class="menu-banner_img">
-            </section>
+            </div>
 
             <!-- Section menu =============================================================== -->
             <div class="menu-container">
@@ -50,13 +50,13 @@
                     <!-- Bloc title ============================================================= -->
                     <div class="menu-heading">
                         <h1 class="menu-heading__title">La note enchantée</h1>
-                        <div class="menu-heading__icon like like--active">
-                            <button class="like__btn like__btn--enable"><i class="fas fa-heart"></i></button>
-                            <button class="like__btn like__btn--disable"><i class="far fa-heart"></i></button> 
+                        <div class="menu-heading__icon like like--active" aria-description="Cliquer sur le coeur pour liker ce restaurant">
+                            <div class="like__btn like__btn--enable"><i class="fas fa-heart"></i></div>
+                            <div class="like__btn like__btn--disable"><i class="far fa-heart"></i></div> 
                         </div>
                     </div>
                     
-                    <div class="menu-content" class="container">
+                    <div class="menu-content">
                         <!-- Section starter - Entrées ========================================== -->
                         <section id="starter" class="menu-section menu-section--1">
                             <h2 class="menu-section__title">ENTRÉES</h2>
@@ -66,28 +66,28 @@
                                     <h3 class="menu-section__subtitle">Ravioles de foie gras</h3>
                                     <p class="menu-section__text">Accompagnés de leur crème à la truffe</p>
                                 </div>
-                                 <p class="menu-section__price">25€</p>
+                                 <div class="menu-section__price">25€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--2">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Caviar osciètre</h3>
                                     <p class="menu-section__text">Sur blini à la farine de blé noir</p>
                                 </div>
-                                <p class="menu-section__price">35€</p>
+                                <div class="menu-section__price">35€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--3">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Homar et espuma de foie gras mi-cuit</h3>
                                     <p class="menu-section__text">Mariné au zeste d'orange</p>
                                 </div>
-                                <p class="menu-section__price">20€</p>
+                                <div class="menu-section__price">20€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--4 card">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Foie gras de canard cuit entier</h3>
                                     <p class="menu-section__text">Confiture de figues et pain toasté</p>
                                 </div>
-                                <p class="menu-section__price">35€</p>
+                                <div class="menu-section__price">35€</div>
                             </div>
                         </section>
 
@@ -100,21 +100,21 @@
                                     <h3 class="menu-section__subtitle">Noix de coquilles Saint-Jacques</h3>
                                     <p class="menu-section__text">Sur lit de purée de céléri-rave</p>
                                 </div>
-                                <p class="menu-section__price">40€</p>
+                                <div class="menu-section__price">40€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--2">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Langoustine poêlée</h3>
                                     <p class="menu-section__text">Purée de patate douce</p>
                                 </div>
-                                <p class="menu-section__price">35€</p>
+                                <div class="menu-section__price">35€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--3">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Mijotée de queue de boeuf</h3>
                                     <p class="menu-section__text">Et riz sauvage au zests de citron</p>
                                 </div>
-                                <p class="menu-section__price">44€</p>
+                                <div class="menu-section__price">44€</div>
                             </div>
                         </section>
 
@@ -127,21 +127,21 @@
                                     <h3 class="menu-section__subtitle">Macaron noisettes et chocolats</h3>
                                     <p class="menu-section__text">Glace au caramel brun et sel de guérande</p>
                                 </div>
-                                <p class="menu-section__price">18€</p>
+                                <div class="menu-section__price">18€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--2">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Baba au rhum revisité</h3>
                                     <p class="menu-section__text">Avec son coulis de citron</p>
                                 </div>
-                                <p class="menu-section__price">22€</p>
+                                <div class="menu-section__price">22€</div>
                             </div>
                             <div class="menu-section__content menu-section__content--3">
                                 <div class="menu-section__details">
                                     <h3 class="menu-section__subtitle">Tarte au citron meringuée</h3>
                                     <p class="menu-section__text">Déstructurée</p>
                                 </div>
-                                <p class="menu-section__price">23€</p>
+                                <div class="menu-section__price">23€</div>
                             </div>
                         </section>
 

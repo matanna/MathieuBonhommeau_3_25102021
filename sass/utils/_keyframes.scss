@@ -1,3 +1,4 @@
+//Animation for display elements of menu one by one
 @keyframes display-menu {
     0% {
         opacity: 0;
@@ -14,6 +15,7 @@
     }
 }
 
+//Animation for move the left ball on loader
 @keyframes balancing-left {
 
     0%,
@@ -34,6 +36,7 @@
     }
 }
 
+//Animation for move the right ball on loader
 @keyframes balancing-right {
 
     0%,
@@ -55,6 +58,7 @@
     }
 }
 
+//Animation for make vibrations on middle balls for loader
 @keyframes vibrations {
 
     0%,
@@ -74,6 +78,7 @@
     }
 }
 
+//Animation for move the shadow of the left ball in the loader
 @keyframes balancing-shadow-left {
 
     0%,
@@ -93,6 +98,7 @@
     }
 }
 
+//Animation for move the shadow of the right ball in the loader
 @keyframes balancing-shadow-right {
 
     0%,
@@ -114,6 +120,7 @@
     }
 }
 
+//Animation for move the shadow of the middle balls in the loader
 @keyframes shadow-vibrations {
 
     0%,

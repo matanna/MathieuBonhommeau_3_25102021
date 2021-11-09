@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,300&family=Shrikhand&display=swap");
-/* General variables ========================================================== */
-/* Specific variables ========================================================== */
-/* Variables for mixin "display-menu-animation" ============ */
-/* Variables for mixin "step-number" ============ */
-/* General mixins ================================================================= */
-/* Specific mixins ================================================================== */
 @keyframes display-menu {
   0% {
     opacity: 0;

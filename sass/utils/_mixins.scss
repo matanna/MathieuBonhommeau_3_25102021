@@ -1,4 +1,4 @@
-/* General mixins ================================================================= */
+// General mixins =================================================================
 
 //Generate shadow
 @mixin shadow($size: 5px, $bg-color: $tertiary, $color: $tertiary) {
@@ -79,7 +79,7 @@
     opacity: 0;
 }
 
-/* Specific mixins ================================================================== */
+// Specific mixins ==================================================================
 
 //Generate pseudo element ::before for number of step
 @mixin step-number($number) {
