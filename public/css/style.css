@@ -85,6 +85,10 @@
     transform: rotateX(77deg) translateX(-3px);
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   font-size: 14px;
