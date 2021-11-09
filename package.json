@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer -d .public/css/prefixed/"
+    "normalize": "sass ./sass/vendor/normalize.scss:./public/css/normalize.css --style=compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d .public/css/prefixed/",
+    "sass-min-prefix": "sass ./sass/main.scss:./public/css/style.min.css --style=compressed && postcss ./public/css/style.min.css --use autoprefixer -d ./public/css"
   },
   "repository": {
     "type": "git",

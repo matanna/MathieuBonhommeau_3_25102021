@@ -1,0 +1,29 @@
+#header-container {
+    @include shadow($size: 3px);
+    
+    width: 100%;
+    height: $box-height;
+
+    @include desktop-only {
+        height: $box-height * $coeff;
+    }
+}
+
+.header {
+    @include center-in-box;
+
+    &__logo {
+        @include logo;
+        position: relative;
+    }
+
+    &__back {
+        position: absolute;
+        left: 10px;
+
+        @include desktop-only {
+            left: 30px;
+            font-size: $text-size * $coeff;
+        }
+    }
+}

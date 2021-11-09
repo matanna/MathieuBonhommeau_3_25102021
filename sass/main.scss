@@ -1,3 +1,29 @@
-/* This file is the principal file
- * All scss files are include in this file
- */
+@use "sass:list";
+@use "sass:math";
+
+@import './utils/fonts';
+@import './utils/variables';
+@import './utils/functions';
+@import './utils/mixins';
+@import './utils/keyframes';
+@import './utils/breakpoints';
+
+@import './base/base';
+@import './base/typography';
+
+@import './layouts/container';
+@import './layouts/header';
+@import './layouts/section';
+@import './layouts/footer';
+
+@import './components/buttons';
+@import './components/like';
+@import './components/loader';
+
+@import './pages/front-page/localization';
+@import './pages/front-page/front-banner';
+@import './pages/front-page/working';
+@import './pages/front-page/restaurants';
+
+@import './pages/menu-page/menu-banner';
+@import './pages/menu-page/menu';

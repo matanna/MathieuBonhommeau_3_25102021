@@ -1,0 +1,13 @@
+#menu-banner {
+    padding: 0;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: $menu-banner-height;
+
+        @include desktop-only {
+            height: 35vh;
+        }
+    } 
+}

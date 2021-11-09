@@ -1,0 +1,22 @@
+.front-banner-container {
+    @include center-in-box;
+    background: color($tertiary, xlight);
+}
+
+#front-banner {
+    @include center-in-box;
+    text-align: center;
+
+    h1 {
+        font-family: $text-font;
+        font-weight: bold;
+        font-size: $title-size;
+        padding: 0 15%;
+
+        @include desktop-only {
+            flex-direction: row;
+            font-size: $title-size * $coeff;
+            padding: 0;
+        }
+    }
+}

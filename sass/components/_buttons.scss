@@ -1,0 +1,32 @@
+.btn {
+    @include shadow;
+
+    position: relative;
+    color: color($tertiary, xlight);
+    font-weight: bold;
+    background: linear-gradient(175deg, color($primary, light), color($primary));
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    margin: 1rem auto;
+    border: none;
+    min-width: 170px;
+    opacity: 1;
+    transition: opacity 0.2s, transform 0.2s;
+
+    &::after {
+        @include pseudo-element;
+        @include shadow($size: 6px, $color: color($tertiary, xdark));
+
+        transition: opacity 0.2s;
+    }
+
+    &:hover {
+        color: color($tertiary, xlight);
+        opacity: 0.85;
+        transform: translate(1.5px, -3px);
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}

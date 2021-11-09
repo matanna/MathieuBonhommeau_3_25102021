@@ -1,0 +1,21 @@
+//Function for calculate all colors lights
+@function color($color, $light: normal) {
+    $map: (normal: $color,
+            light: lighten($color, 15%),
+            xlight: lighten($color, 20%),
+            dark: darken($color, 20%),
+            sdark: darken($color, 10%),
+            xdark: darken($color, 40%));
+    @return map-get($map, $light);
+}
+
+//Function for calculate height of card for desktop display
+@function restaurant-card-height() {
+    $map: (
+        height: math.div(100vw, 4),
+        max-height: $max-card-height,
+        height-img: calc(math.div(100vw, 4) - $box-height * 1.5),
+        max-height-img: calc($max-card-height - $box-height * 1.5)
+    );
+    @return $map;
+}

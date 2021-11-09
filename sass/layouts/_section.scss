@@ -1,0 +1,7 @@
+section {
+     padding: 2rem $side-padding;
+
+     @include desktop-only {
+          padding: (2rem * $coeff) $side-padding;
+     }
+}

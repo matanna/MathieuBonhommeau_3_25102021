@@ -1,0 +1,50 @@
+// Classes for like button
+
+.like {
+    width: $icon-size;
+    height: $icon-size;
+
+    &--active .like__btn {
+
+        &--disable {
+            display: none;
+        }
+
+        &--enable {
+            @include like-enable;
+            transform: scale(1);
+        }
+    }
+
+    &:hover, &:active {
+        .like__btn--enable {
+            transform: scale(1);
+        }
+        .like__btn--disable {
+            color: color($primary);
+            opacity: 1;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        transform-origin: 50% 80%;
+        transition: transform 0.7s, opacity, 0.7s;
+        
+        i {
+            font-size: $icon-size;
+        }
+
+        &--disable {
+            z-index: 10;
+        }
+
+        &--enable {
+            @include like-enable;
+            transform: scale(0);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+#footer-container {
+    background-color: $footer-bg;
+}
+
+footer {
+    @include center-in-box;
+    margin: 0 auto;
+    align-items: flex-start;
+    color: $footer-text;
+    padding: 1rem $side-padding;
+}
+
+.footer-links {
+    
+    &__item {
+        margin-bottom: 0.6rem;
+
+        i {
+            width: 1rem;
+            padding-right: 0.5rem;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        &--highlight {
+            font-weight: bold;
+        }
+    }
+}

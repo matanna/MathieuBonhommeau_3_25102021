@@ -1,0 +1,9 @@
+body {
+    box-sizing: border-box;
+    font-size: $text-size;
+    font-family: $text-font;
+
+    @include desktop-only {
+        font-size: $text-size*1.2;
+    }
+}
