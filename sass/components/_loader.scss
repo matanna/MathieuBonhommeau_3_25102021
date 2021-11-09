@@ -24,23 +24,11 @@
 
 .loader {
     display: flex;
-}
 
-.logo-loader {
-    width: 50%;
-    margin-bottom: 10vh;
-
-    @include tablet-only {
-        width: 30%;
-    }
-
-    @include desktop-only {
-        width: 15%;
-    }
-
-    img {
-        width: 100%;
-        object-fit: cover; 
+    &__logo {
+        @include logo;
+        width: 50%;
+        margin-bottom: 5vh;
     }
 }
 

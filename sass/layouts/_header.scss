@@ -13,13 +13,8 @@
     @include center-in-box;
 
     &__logo {
+        @include logo;
         position: relative;
-        display: block;
-        width: $logo-size;
-
-        @include desktop-only {
-            width: $logo-size * $coeff;
-        }
     }
 
     &__back {
