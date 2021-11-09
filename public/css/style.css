@@ -149,13 +149,19 @@ ul {
   align-items: center;
 }
 .header__logo {
+  text-align: center;
+  font-family: "Shrikhand", "cursive";
+  font-size: 26px;
   position: relative;
-  display: block;
-  width: 150px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .header__logo {
+    font-size: 30px;
+  }
 }
 @media screen and (min-width: 992px) {
   .header__logo {
-    width: 225px;
+    font-size: 39px;
   }
 }
 .header__back {
@@ -317,24 +323,22 @@ footer {
 .loader {
   display: flex;
 }
-
-.logo-loader {
+.loader__logo {
+  text-align: center;
+  font-family: "Shrikhand", "cursive";
+  font-size: 26px;
   width: 50%;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  .logo-loader {
-    width: 30%;
+  .loader__logo {
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 992px) {
-  .logo-loader {
-    width: 15%;
+  .loader__logo {
+    font-size: 39px;
   }
-}
-.logo-loader img {
-  width: 100%;
-  object-fit: cover;
 }
 
 .ball {
