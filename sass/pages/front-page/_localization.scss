@@ -1,9 +1,9 @@
 .localization-container {
     @include center-in-box;
 
-    background: color($tertiary, light);
+    background: color($background, sdark);
     position:relative;
-    z-index: -1;
+    z-index: 1;
     padding-top: 1rem;
     padding-bottom: 1rem;
 
@@ -21,6 +21,19 @@
         background: transparent;
         appearance: none;
         font-weight: bold;
+        cursor: pointer;
+
+        & > option {
+            background-color: white;
+            font-family: $text-font;
+
+            &:disabled {
+                background-color: color($background);
+            }
+            &:focus-visible {
+                background-color: color($primary);
+            }
+        }
     }
 
     &__icon {

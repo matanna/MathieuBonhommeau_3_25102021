@@ -1,11 +1,11 @@
 // General mixins =================================================================
 
 //Generate shadow
-@mixin shadow($size: 5px, $bg-color: $tertiary, $color: $tertiary) {
+@mixin shadow($size: 5px, $bg-color: $background, $color: $background) {
     @if (lightness($bg-color) > lightness($color)) {
         box-shadow: 0px $size ($size+3) color($color, light);
     } @else {
-        box-shadow: 0px $size ($size+3) color($color, sdark);
+        box-shadow: 0px $size ($size+3) color($color, dark);
     } 
 }
 
@@ -103,7 +103,7 @@
             content: "#{$i}";
             position: absolute;
             left: -(math.div($icon-size, 2));
-            background: color($primary);
+            background: color($primary, sdark);
             width: $icon-size;
             height: $icon-size;
             border-radius: 100%;

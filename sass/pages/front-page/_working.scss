@@ -24,7 +24,7 @@
 
     position: relative;
     height: $box-height;
-    background-color: color($tertiary, xlight);
+    background-color: color($background);
     font-weight: bold;
     justify-content: flex-start;
 
@@ -45,7 +45,7 @@
 
     &::after {
         @include pseudo-element;
-        background-color: color($secondary, xlight);
+        background-color: color($primary, xxlight);
         transition: opacity 0.2s;
     }
 

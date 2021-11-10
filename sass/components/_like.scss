@@ -3,6 +3,7 @@
 .like {
     width: $icon-size;
     height: $icon-size;
+    cursor: pointer;
 
     &--active .like__btn {
 

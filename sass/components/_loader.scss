@@ -63,7 +63,7 @@
 }
 
 .ball-shadow {
-    background: radial-gradient(closest-side, color($tertiary), white);
+    background: radial-gradient(closest-side, color($background, dark), white);
     width: 30px;
     height: 30px;
     border-radius: 50%;
